@@ -7,7 +7,8 @@ class BaseScene
 private:
 
 public:
-
+	BaseScene::BaseScene() {} 
+	BaseScene::~BaseScene() {}
 };
 
 #endif

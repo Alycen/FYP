@@ -27,7 +27,6 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
 	Player player = Player(200.0f, 200.0f);
 
-
 	while (window.isOpen())
 	{ 
 		sf::Event Event;
