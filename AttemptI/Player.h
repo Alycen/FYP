@@ -7,11 +7,13 @@ using namespace std;
 #include "SFML/OpenGL.hpp" 
 #include <iostream> 
 #include "ResourceManager.h"
+#include "InputManager.h"
 
 class Player
 {
 private:
 	ResourceManager rm; // All assets will be loaded and set through AN INSTANCE of ResourceManager
+	InputManager im;	// All inputs will be handled in this inputManager
 
 	sf::Texture texture;
 	sf::Sprite sprite;

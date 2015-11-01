@@ -20,12 +20,19 @@
 #include <iostream> 
 #define _USE_MATH_DEFINES
 #include <math.h>
-#include "Player.h"
+//#include "Player.h"
+#include "InputManager.h"
+#include "ResourceManager.h"
+#include "SceneManager.h"
 
 int main()
 {
+	InputManager im = new InputManager();
+	ResourceManager rm = new ResourceManager();
+	static SceneManager sm = sceneManagerInstance;
+
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
-	Player player = Player(200.0f, 200.0f);
+	//Player player = Player(200.0f, 200.0f);
 
 	while (window.isOpen())
 	{ 
@@ -39,7 +46,7 @@ int main()
 				window.close();
 		}
 		window.clear();
-		player.Draw(window);
+		//player.Draw(window);
 		window.display();
 	}
 	return EXIT_SUCCESS;

@@ -151,7 +151,8 @@
   <ItemGroup>
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="LoadingScene.h" />
     <ClInclude Include="MainMenuScene.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Player.h" />
@@ -171,6 +172,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
