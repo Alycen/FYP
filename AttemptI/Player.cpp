@@ -17,7 +17,7 @@ Player::Player(float x, float y)
 
 void Player::Update() 
 {
-
+	sprite.setPosition(position);
 }
 
 void Player::Draw(sf::RenderWindow &win) 
@@ -25,8 +25,19 @@ void Player::Draw(sf::RenderWindow &win)
 	win.draw(sprite);
 }
 
-void Player::Move() 
+void Player::Move(int dir) 
 {
+	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
+	if (dir == UP) 
+		position.y -= 2;
+	else if (dir == DOWN)
+		position.y += 2;
+	if (dir == LEFT)
+		position.x -= 3;
+	else if (dir == RIGHT)
+		position.x += 3;
+		
+	// May have to change how this method works / InputManager checked outside of the player and then have a command sent to this method;
 	// In combat :
 	// if ( mouse.y is less than player.y ) 
 	//     player.sprite is facing North

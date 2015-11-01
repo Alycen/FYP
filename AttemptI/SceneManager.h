@@ -25,6 +25,4 @@ public:
 	}
 };
 
-extern SceneManager sceneManagerInstance;
-
 #endif

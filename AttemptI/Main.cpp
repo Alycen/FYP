@@ -28,10 +28,10 @@ int main()
 {
 	InputManager im = InputManager();
 	ResourceManager rm = ResourceManager();
-	static SceneManager sm = sceneManagerInstance;
+//	static SceneManager sm = sceneManagerInstance;
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
-	//Player player = Player(200.0f, 200.0f);
+	Player player = Player(200.0f, 200.0f);
 
 	while (window.isOpen())
 	{ 
@@ -43,9 +43,20 @@ int main()
 			
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
+
+			if (im.CheckInput(Event, sf::Keyboard::W))
+				player.Move(1);
+			if (im.CheckInput(Event, sf::Keyboard::A))
+				player.Move(2);
+			if (im.CheckInput(Event, sf::Keyboard::S))
+				player.Move(3);
+			if (im.CheckInput(Event, sf::Keyboard::D))
+				player.Move(4);
+
+			player.Update();
 		}
 		window.clear();
-		//player.Draw(window);
+		player.Draw(window);
 		window.display();
 	}
 	return EXIT_SUCCESS;
