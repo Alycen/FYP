@@ -36,6 +36,7 @@ int main()
 	while (window.isOpen())
 	{ 
 		sf::Event Event;
+		sf::Mouse mouse;
 		while (window.pollEvent(Event))
 		{
 			if (Event.type == sf::Event::Closed)
@@ -52,6 +53,7 @@ int main()
 				player.Move(3);
 			if (im.CheckInput(Event, sf::Keyboard::D))
 				player.Move(4);
+			
 
 			player.Update();
 		}

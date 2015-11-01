@@ -47,3 +47,9 @@ void Player::Move(int dir)
 	//     Slow players movement speed
 	// etc ...
 }
+
+void Player::Move(sf::Vector2i pos) 
+{
+	position.x = float(pos.x);
+	position.y = float(pos.y);
+}

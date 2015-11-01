@@ -20,6 +20,11 @@ public:
 		}
 	}
 
+	//sf::Vector2i InputManager::CheckMouse(sf::Mouse::Button mouse, sf::Mouse pos) {
+	//	if (mouse == sf::Mouse::Button::Left)
+	//		return pos.getPosition();
+	//}
+
 	InputManager::~InputManager() { }
 };
 
