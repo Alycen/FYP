@@ -11,8 +11,9 @@
 class SceneManager
 {
 private:
-	SceneManager() {}
+	
 public:
+	SceneManager() {}
 	enum SceneType {
 		SCENE_SPLASH,
 		SCENE_MAINMENU,
@@ -24,5 +25,7 @@ public:
 		return sm;
 	}
 };
+
+extern SceneManager sceneManagerInstance;
 
 #endif

@@ -28,7 +28,7 @@ int main()
 {
 	InputManager im = InputManager();
 	ResourceManager rm = ResourceManager();
-//	static SceneManager sm = sceneManagerInstance;
+	static SceneManager sm = sceneManagerInstance;
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
 	Player player = Player(200.0f, 200.0f);
