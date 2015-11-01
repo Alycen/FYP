@@ -26,6 +26,8 @@
 
 int main()
 {
+	srand(time(NULL));
+
 	InputManager im = InputManager();
 	ResourceManager rm = ResourceManager();
 	static SceneManager sm = sceneManagerInstance;
@@ -54,8 +56,8 @@ int main()
 			if (im.CheckInput(Event, sf::Keyboard::D))
 				player.Move(4);
 
+			player.Update(); 
 			npc_01.Update();
-			player.Update();
 		}
 		window.clear();
 		player.Draw(window);
