@@ -53,7 +53,9 @@ int main()
 				player.Move(3);
 			if (im.CheckInput(Event, sf::Keyboard::D))
 				player.Move(4);
-			
+
+			if (im.CheckInput(Event, sf::Keyboard::W) && im.CheckInput(Event, sf::Keyboard::A))
+				player.Move(5);
 
 			player.Update();
 		}
