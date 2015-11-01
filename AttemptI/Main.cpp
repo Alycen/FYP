@@ -20,15 +20,14 @@
 #include <iostream> 
 #define _USE_MATH_DEFINES
 #include <math.h>
-//#include "Player.h"
 #include "InputManager.h"
 #include "ResourceManager.h"
 #include "SceneManager.h"
 
 int main()
 {
-	InputManager im = new InputManager();
-	ResourceManager rm = new ResourceManager();
+	InputManager im = InputManager();
+	ResourceManager rm = ResourceManager();
 	static SceneManager sm = sceneManagerInstance;
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
