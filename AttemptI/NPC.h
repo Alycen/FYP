@@ -1,4 +1,3 @@
-#pragma once
 #ifndef NPC_H
 #define NPC_H
 
@@ -19,8 +18,8 @@ private:
 
 	sf::Vector2f position;
 	sf::Vector2f velocity;
-	float xScale;
-	float yScale;
+	float xScale = 0.3f;
+	float yScale = 0.3f;
 
 public:
 	NPC();
@@ -30,6 +29,6 @@ public:
 	void Draw(sf::RenderWindow &win);
 	void Move();
 	
-	NPC::~NPC();
+	NPC::~NPC() {};
 };
 #endif

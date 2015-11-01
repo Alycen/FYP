@@ -29,7 +29,6 @@ public:
 	void Draw(sf::RenderWindow &win);
 
 	void Move(int dir);
-	void Move(sf::Vector2i pos);
 
 	Player::~Player() {};
 };

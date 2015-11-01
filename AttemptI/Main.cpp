@@ -32,11 +32,11 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
 	Player player = Player(200.0f, 200.0f);
+	NPC npc_01 = NPC(100.f, 500.0f);
 
 	while (window.isOpen())
 	{ 
 		sf::Event Event;
-		sf::Mouse mouse;
 		while (window.pollEvent(Event))
 		{
 			if (Event.type == sf::Event::Closed)
@@ -54,13 +54,12 @@ int main()
 			if (im.CheckInput(Event, sf::Keyboard::D))
 				player.Move(4);
 
-			if (im.CheckInput(Event, sf::Keyboard::W) && im.CheckInput(Event, sf::Keyboard::A))
-				player.Move(5);
-
+			npc_01.Update();
 			player.Update();
 		}
 		window.clear();
 		player.Draw(window);
+		npc_01.Draw(window);
 		window.display();
 	}
 	return EXIT_SUCCESS;

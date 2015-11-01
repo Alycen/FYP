@@ -1,9 +1,6 @@
 #include "NPC.h"
 
-NPC::NPC() 
-{
-
-}
+NPC::NPC() { }
 
 NPC::NPC(float x, float y)
 {
@@ -20,7 +17,7 @@ NPC::NPC(float x, float y)
 
 void NPC::Update()
 {
-
+	sprite.setPosition(position);
 }
 
 void NPC::Draw(sf::RenderWindow &win)
@@ -31,4 +28,5 @@ void NPC::Draw(sf::RenderWindow &win)
 void NPC::Move() 
 {
 	// Do something ...
+
 }
