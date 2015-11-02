@@ -33,6 +33,8 @@ int main()
 	static SceneManager sm = sceneManagerInstance;
 
 	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
+	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
+
 	Player player = Player(200.0f, 200.0f);
 	NPC npc_01 = NPC(100.f, 500.0f);
 
