@@ -13,7 +13,7 @@ class NPC
 private:
 	ResourceManager rm;
 
-	int timer = rand() % 100 + 1;
+	int timer = rand() % 100000 + 1;
 
 	sf::Texture texture;
 	sf::Sprite sprite;

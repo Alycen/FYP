@@ -59,11 +59,13 @@ int main()
 				player.Move(4);
 
 			player.Update(); 
-			npc_01.Update();
+			
 		}
+		npc_01.Update();
+
 		window.clear();
-		player.Draw(window);
 		npc_01.Draw(window);
+		player.Draw(window);
 		window.display();
 	}
 	return EXIT_SUCCESS;
