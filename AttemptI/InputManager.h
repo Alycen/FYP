@@ -18,12 +18,11 @@ public:
 	InputManager::InputManager() { }
 
 	bool InputManager::CheckInput(sf::Event event, sf::Keyboard::Key key) {
-		if (event.type == sf::Event::KeyPressed) {
-			if (event.key.code == key) 
-				return true;
-			else
-				return false;
-		}
+		if (event.type == sf::Event::KeyPressed && event.key.code == key)
+			return true;
+		else
+			return false;
+		
 	}
 
 	InputManager::~InputManager() { }
