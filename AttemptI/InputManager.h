@@ -22,7 +22,6 @@ public:
 			return true;
 		else
 			return false;
-		
 	}
 
 	InputManager::~InputManager() { }

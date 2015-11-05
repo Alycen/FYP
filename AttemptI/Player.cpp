@@ -18,6 +18,14 @@ Player::Player(float x, float y)
 void Player::Update() 
 {
 	sprite.setPosition(position);
+	if (up)
+		position.y -= 1;
+	else if (down)
+		position.y += 1;
+	if (left)
+		position.x -= 2;
+	else if (right) 
+		position.x += 2;
 }
 
 void Player::Draw(sf::RenderWindow &win) 
@@ -28,14 +36,21 @@ void Player::Draw(sf::RenderWindow &win)
 void Player::Move(int dir) 
 {
 	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
-	if (dir == UP) 
-		position.y -= 2;
+	if (dir == UP)
+		up = true; //position.y -= 2;
 	else if (dir == DOWN)
-		position.y += 2;
+		down = true; //position.y += 2;
 	if (dir == LEFT)
-		position.x -= 3;
+		left = true; //position.x -= 3;
 	else if (dir == RIGHT)
-		position.x += 3;
+		right = true; //position.x += 3;
+
+	else if (dir == 0) {
+		up = false;
+		down = false;
+		left = false;
+		right = false;
+	}
 		
 	// May have to change how this method works / InputManager checked outside of the player and then have a command sent to this method;
 	// In combat :

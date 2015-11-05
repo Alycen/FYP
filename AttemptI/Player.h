@@ -21,6 +21,8 @@ private:
 	float xScale = 0.3f;
 	float yScale = 0.3f;
 
+	bool left = false, right = false, up = false, down = false;
+
 public:
 	Player();
 	Player(float x, float y);

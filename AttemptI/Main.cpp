@@ -32,11 +32,11 @@ int main()
 	ResourceManager rm = ResourceManager();
 	static SceneManager sm = sceneManagerInstance;
 
-	sf::RenderWindow window(sf::VideoMode(800, 600, 32), "Project Mk 1");
+	sf::RenderWindow window(sf::VideoMode(1800, 1000, 32), "Project Mk 1");
 	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
 
-	Player player = Player(200.0f, 200.0f);
-	NPC npc_01 = NPC(100.f, 500.0f);
+	Player player = Player(900.0f, 200.0f);
+	NPC npc_01 = NPC(600.f, 500.0f);
 
 	while (window.isOpen())
 	{ 
@@ -57,7 +57,8 @@ int main()
 				player.Move(3);
 			if (im.CheckInput(Event, sf::Keyboard::D))
 				player.Move(4);
-
+			if (Event.type == sf::Event::KeyReleased)
+				player.Move(0);
 			player.Update(); 
 			
 		}
