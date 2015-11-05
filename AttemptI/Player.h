@@ -20,6 +20,8 @@ private:
 	sf::Vector2f velocity;
 	float xScale = 0.3f;
 	float yScale = 0.3f;
+	float vSpeed = 0.02f;
+	float hSpeed = 0.01f;
 
 	bool left = false, right = false, up = false, down = false;
 

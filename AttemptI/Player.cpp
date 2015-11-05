@@ -19,18 +19,13 @@ void Player::Update()
 {
 	sprite.setPosition(position);
 	if (up)
-		position.y -= 1;
+		position.y -= hSpeed;
 	else if (down)
-		position.y += 1;
+		position.y += hSpeed;
 	if (left)
-		position.x -= 2;
+		position.x -= vSpeed;
 	else if (right) 
-		position.x += 2;
-
-	cout << "UP : " << up << "\n" << endl;
-	cout << "DOWN : " << down << "\n" << endl;
-	cout << "LEFT : " << left << "\n" << endl;
-	cout << "RIGHT : " << right << "\n" << endl;
+		position.x += vSpeed;
 }
 
 void Player::Draw(sf::RenderWindow &win) 
@@ -60,7 +55,6 @@ void Player::Move(int dir)
 		// up, but releasing any keys causes the programme to say all directions are now
 		// false
 	}
-		
 	// May have to change how this method works / InputManager checked outside of the player and then have a command sent to this method;
 	// In combat :
 	// if ( mouse.y is less than player.y ) 

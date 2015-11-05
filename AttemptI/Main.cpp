@@ -33,6 +33,9 @@ int main()
 	static SceneManager sm = sceneManagerInstance;
 
 	sf::RenderWindow window(sf::VideoMode(1200, 800, 32), "Project Mk 1");
+	sf::View camera; //(sf::FloatRect(200, 800, 150, 550));
+	camera.setCenter(sf::Vector2f(600, 400));
+	camera.setSize(sf::Vector2f(1000, 600));
 	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
 
 	Player player = Player(900.0f, 200.0f);
@@ -59,9 +62,8 @@ int main()
 				player.Move(4);
 			if (Event.type == sf::Event::KeyReleased)
 				player.Move(0);
-			player.Update(); 
-			
 		}
+		player.Update();
 		npc_01.Update();
 
 		window.clear();
