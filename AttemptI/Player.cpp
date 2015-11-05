@@ -26,6 +26,11 @@ void Player::Update()
 		position.x -= 2;
 	else if (right) 
 		position.x += 2;
+
+	cout << "UP : " << up << "\n" << endl;
+	cout << "DOWN : " << down << "\n" << endl;
+	cout << "LEFT : " << left << "\n" << endl;
+	cout << "RIGHT : " << right << "\n" << endl;
 }
 
 void Player::Draw(sf::RenderWindow &win) 
@@ -50,6 +55,10 @@ void Player::Move(int dir)
 		down = false;
 		left = false;
 		right = false;
+		// Setting all the directions to false if one key is released means that if i hold 
+		// down w & d I will move up and right, but if i release d, I should continue on 
+		// up, but releasing any keys causes the programme to say all directions are now
+		// false
 	}
 		
 	// May have to change how this method works / InputManager checked outside of the player and then have a command sent to this method;

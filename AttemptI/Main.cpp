@@ -32,7 +32,7 @@ int main()
 	ResourceManager rm = ResourceManager();
 	static SceneManager sm = sceneManagerInstance;
 
-	sf::RenderWindow window(sf::VideoMode(1800, 1000, 32), "Project Mk 1");
+	sf::RenderWindow window(sf::VideoMode(1200, 800, 32), "Project Mk 1");
 	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
 
 	Player player = Player(900.0f, 200.0f);
