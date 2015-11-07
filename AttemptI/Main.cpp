@@ -52,38 +52,30 @@ int main()
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
 
-			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyPressed) {
+			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyPressed) 
 				player.Move(1);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyReleased) {
+			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyReleased) 
 				player.Move(5);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyPressed) {
-				player.Move(2);
-			
-			}
-			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyReleased) {
-				player.Move(10);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyPressed) {
-				player.Move(3);
-			
-			}
-			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyReleased) {
-				player.Move(15);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyPressed) {
-				player.Move(4);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyReleased) {
-				player.Move(20);
-			}
-			
-			if (Event.type == sf::Event::KeyReleased)
-				player.Move(0);
 
-			if (im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) 
+			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyPressed) 
+				player.Move(2);
+			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyReleased) 
+				player.Move(10);
+
+			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyPressed) 
+				player.Move(3);
+			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyReleased) 
+				player.Move(15);
+
+			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyPressed) 
+				player.Move(4);
+			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyReleased) 
+				player.Move(20);
+
+			if ((im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) && Event.type == sf::Event::KeyPressed)
 				player.isRunning(true);
+			if ((im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) && Event.type == sf::Event::KeyReleased)
+				player.isRunning(false);
 		}
 
 		player.Update();

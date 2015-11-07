@@ -35,7 +35,7 @@ void Player::Draw(sf::RenderWindow &win)
 
 void Player::Move(int dir) 
 {
-	cout << dir << endl;
+	// Might have to control the run speed in this sections becuase player moves too fast if moving diagonally
 
 	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
 	if (dir == UP)
@@ -56,14 +56,6 @@ void Player::Move(int dir)
 	if (dir == RIGHT * 5)
 		right = false;
 
-	else if (dir == 0) {
-		//up = false;
-		//down = false;
-		//left = false;
-		//right = false;
-		vSpeed = 0.03f;
-		hSpeed = 0.01f;
-	}
 	// May have to change how this method works / InputManager checked outside of the player and then have a command sent to this method;
 	// In combat :
 	// if ( mouse.y is less than player.y ) 
@@ -78,11 +70,11 @@ void Player::Move(int dir)
 void Player::isRunning(bool r) 
 {
 	if (r) {
-		vSpeed = 0.06f;
-		hSpeed = 0.02f;
+		vSpeed = 0.03f;
+		hSpeed = 0.015f;
 	}
 	else {
-		vSpeed = 0.03f;
-		hSpeed = 0.01f;
+		vSpeed = 0.01f;
+		hSpeed = 0.005f;
 	}
 }
