@@ -18,18 +18,28 @@ Player::Player(float x, float y)
 void Player::Update() 
 {
 	if (run) {
-		if (vert)
+		if (vert) {
+			// If player is running and moving vertically
 			vSpeed = 0.02;
-		else
-			vSpeed = 0.06f;
-		hSpeed = 0.02f;
+			hSpeed = 0.02f;
+		}
+		else {
+			// If player is running and not moving vertically
+			vSpeed = 0.04f;
+			hSpeed = 0.03f;
+		}
 	}
 	else {
-		if (vert)
+		if (vert) {
+			// If player is moving vertically
 			vSpeed = 0.01f;
-		else
-			vSpeed = 0.03f;
-		hSpeed = 0.01f;
+			hSpeed = 0.01f;
+		}
+		else {
+			// If player is not moving vertically
+			vSpeed = 0.02f;
+			hSpeed = 0.02f;
+		}
 	}
 
 	sprite.setPosition(position);
@@ -50,8 +60,6 @@ void Player::Draw(sf::RenderWindow &win)
 
 void Player::MoveK(int dir) 
 {
-	// Might have to control the run speed in this sections becuase player moves too fast if moving diagonally
-
 	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
 	if (dir == UP) {
 		up = true;
@@ -78,16 +86,6 @@ void Player::MoveK(int dir)
 	}
 	if (dir == RIGHT * 5)
 		right = false;
-
-	// May have to change how this method works / InputManager checked outside of the player and then have a command sent to this method;
-	// In combat :
-	// if ( mouse.y is less than player.y ) 
-	//     player.sprite is facing North
-	// etc ...
-
-	// if ( player.sprite is facing North && player is not moving North ) 
-	//     Slow players movement speed
-	// etc ...
 }
 
 void Player::isRunning(bool r) 
