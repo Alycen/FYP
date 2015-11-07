@@ -53,24 +53,24 @@ int main()
 				window.close();
 
 			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyPressed) 
-				player.Move(1);
+				player.MoveK(1);
 			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyReleased) 
-				player.Move(5);
+				player.MoveK(5);
 
 			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyPressed) 
-				player.Move(2);
+				player.MoveK(2);
 			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyReleased) 
-				player.Move(10);
+				player.MoveK(10);
 
 			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyPressed) 
-				player.Move(3);
+				player.MoveK(3);
 			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyReleased) 
-				player.Move(15);
+				player.MoveK(15);
 
 			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyPressed) 
-				player.Move(4);
+				player.MoveK(4);
 			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyReleased) 
-				player.Move(20);
+				player.MoveK(20);
 
 			if ((im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) && Event.type == sf::Event::KeyPressed)
 				player.isRunning(true);

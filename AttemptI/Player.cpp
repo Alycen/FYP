@@ -17,6 +17,21 @@ Player::Player(float x, float y)
 
 void Player::Update() 
 {
+	if (run) {
+		if (vert)
+			vSpeed = 0.02;
+		else
+			vSpeed = 0.06f;
+		hSpeed = 0.02f;
+	}
+	else {
+		if (vert)
+			vSpeed = 0.01f;
+		else
+			vSpeed = 0.03f;
+		hSpeed = 0.01f;
+	}
+
 	sprite.setPosition(position);
 	if (up)
 		position.y -= hSpeed;
@@ -33,26 +48,34 @@ void Player::Draw(sf::RenderWindow &win)
 	win.draw(sprite);
 }
 
-void Player::Move(int dir) 
+void Player::MoveK(int dir) 
 {
 	// Might have to control the run speed in this sections becuase player moves too fast if moving diagonally
 
 	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
-	if (dir == UP)
+	if (dir == UP) {
 		up = true;
-	else if (dir == DOWN)
+		vert = true;
+	}
+	else if (dir == DOWN) {
 		down = true;
+		vert = true;
+	}
 	if (dir == LEFT)
 		left = true;
 	else if (dir == RIGHT)
 		right = true;
 
-	if (dir == UP * 5)
+	if (dir == UP * 5) {
 		up = false;
+		vert = false;
+	}
 	if (dir == LEFT * 5)
 		left = false;
-	if (dir == DOWN * 5)
+	if (dir == DOWN * 5) {
 		down = false;
+		vert = false;
+	}
 	if (dir == RIGHT * 5)
 		right = false;
 
@@ -69,12 +92,5 @@ void Player::Move(int dir)
 
 void Player::isRunning(bool r) 
 {
-	if (r) {
-		vSpeed = 0.03f;
-		hSpeed = 0.015f;
-	}
-	else {
-		vSpeed = 0.01f;
-		hSpeed = 0.005f;
-	}
+	run = r;
 }

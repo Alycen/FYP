@@ -23,6 +23,8 @@ private:
 	float vSpeed = 0.03f;
 	float hSpeed = 0.01f;
 
+	bool vert = false;
+	bool run = false;
 	bool left = false, right = false, up = false, down = false;
 
 public:
@@ -32,7 +34,7 @@ public:
 	void Update();
 	void Draw(sf::RenderWindow &win);
 
-	void Move(int dir);
+	void MoveK(int dir);
 	void isRunning(bool r);
 
 	Player::~Player() {};
