@@ -150,7 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseScene.h" />
-    <ClInclude Include="Camera.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="LoadingScene.h" />

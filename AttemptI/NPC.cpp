@@ -20,7 +20,7 @@ NPC::NPC(float x, float y)
 void NPC::Update()
 {
 	sprite.setPosition(position);
-	//Move();
+	Move();
 }
 
 void NPC::Draw(sf::RenderWindow &win)
@@ -30,18 +30,5 @@ void NPC::Draw(sf::RenderWindow &win)
 
 void NPC::Move() 
 {
-	int dir = rand() % 2 + 1;
-	for (int i = 0; i < timer; i ++) 
-	{
-		cout << dir << endl;
-		if (dir == 1)
-			position.x += 0.001f;
-		else if (dir == 2)
-			position.x -= 0.001f;
-		else
-			position.x = position.x;
 	
-		if (i == timer)
-			timer = rand() % 100000 + 1;
-	}
 }

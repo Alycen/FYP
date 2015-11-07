@@ -35,25 +35,34 @@ void Player::Draw(sf::RenderWindow &win)
 
 void Player::Move(int dir) 
 {
+	cout << dir << endl;
+
 	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
 	if (dir == UP)
-		up = true; //position.y -= 2;
+		up = true;
 	else if (dir == DOWN)
-		down = true; //position.y += 2;
+		down = true;
 	if (dir == LEFT)
-		left = true; //position.x -= 3;
+		left = true;
 	else if (dir == RIGHT)
-		right = true; //position.x += 3;
+		right = true;
+
+	if (dir == UP * 5)
+		up = false;
+	if (dir == LEFT * 5)
+		left = false;
+	if (dir == DOWN * 5)
+		down = false;
+	if (dir == RIGHT * 5)
+		right = false;
 
 	else if (dir == 0) {
-		up = false;
-		down = false;
-		left = false;
-		right = false;
-		// Setting all the directions to false if one key is released means that if i hold 
-		// down w & d I will move up and right, but if i release d, I should continue on 
-		// up, but releasing any keys causes the programme to say all directions are now
-		// false
+		//up = false;
+		//down = false;
+		//left = false;
+		//right = false;
+		vSpeed = 0.03f;
+		hSpeed = 0.01f;
 	}
 	// May have to change how this method works / InputManager checked outside of the player and then have a command sent to this method;
 	// In combat :
@@ -64,4 +73,16 @@ void Player::Move(int dir)
 	// if ( player.sprite is facing North && player is not moving North ) 
 	//     Slow players movement speed
 	// etc ...
+}
+
+void Player::isRunning(bool r) 
+{
+	if (r) {
+		vSpeed = 0.06f;
+		hSpeed = 0.02f;
+	}
+	else {
+		vSpeed = 0.03f;
+		hSpeed = 0.01f;
+	}
 }

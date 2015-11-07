@@ -20,7 +20,7 @@ private:
 	sf::Vector2f velocity;
 	float xScale = 0.3f;
 	float yScale = 0.3f;
-	float vSpeed = 0.02f;
+	float vSpeed = 0.03f;
 	float hSpeed = 0.01f;
 
 	bool left = false, right = false, up = false, down = false;
@@ -33,6 +33,7 @@ public:
 	void Draw(sf::RenderWindow &win);
 
 	void Move(int dir);
+	void isRunning(bool r);
 
 	Player::~Player() {};
 };
