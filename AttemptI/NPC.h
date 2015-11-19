@@ -6,12 +6,10 @@ using namespace std;
 #include "SFML/Graphics.hpp" 
 #include "SFML/OpenGL.hpp" 
 #include <iostream> 
-#include "ResourceManager.h"
 
 class NPC
 {
 private:
-	ResourceManager rm;
 
 	int timer = rand() % 100000 + 1;
 

@@ -21,7 +21,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include "InputManager.h"
-#include "ResourceManager.h"
 #include "SceneManager.h"
 
 int main()
@@ -29,10 +28,10 @@ int main()
 	srand(time(NULL));
 
 	InputManager im = InputManager();
-	ResourceManager rm = ResourceManager();
 	static SceneManager sm = sceneManagerInstance;
 
 	sf::RenderWindow window(sf::VideoMode(1200, 800, 32), "Project Mk 1");
+	
 	sf::View camera; //(sf::FloatRect(200, 800, 150, 550));
 	camera.setCenter(sf::Vector2f(600, 400));
 	camera.setSize(sf::Vector2f(1000, 600));
@@ -52,30 +51,36 @@ int main()
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
 
-			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyPressed) 
-				player.MoveK(1);
-			if (im.CheckInput(Event, sf::Keyboard::W) && Event.type == sf::Event::KeyReleased) 
-				player.MoveK(5);
-
-			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyPressed) 
-				player.MoveK(2);
-			if (im.CheckInput(Event, sf::Keyboard::A) && Event.type == sf::Event::KeyReleased) 
-				player.MoveK(10);
-
-			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyPressed) 
-				player.MoveK(3);
-			if (im.CheckInput(Event, sf::Keyboard::S) && Event.type == sf::Event::KeyReleased) 
+			if (im.CheckInput(Event, sf::Keyboard::W)) {
+				if (Event.type == sf::Event::KeyPressed) 
+					player.MoveK(1);
+				else if (Event.type == sf::Event::KeyReleased) 
+					player.MoveK(5);
+			}
+			if (im.CheckInput(Event, sf::Keyboard::A)) {
+				if (Event.type == sf::Event::KeyPressed) 
+					player.MoveK(2);
+				else if (Event.type == sf::Event::KeyReleased) 
+					player.MoveK(10);
+			}
+			if (im.CheckInput(Event, sf::Keyboard::S)) {
+				if (Event.type == sf::Event::KeyPressed) 
+					player.MoveK(3);
+				else if (Event.type == sf::Event::KeyReleased) 
 				player.MoveK(15);
-
-			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyPressed) 
-				player.MoveK(4);
-			if (im.CheckInput(Event, sf::Keyboard::D) && Event.type == sf::Event::KeyReleased) 
-				player.MoveK(20);
-
-			if ((im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) && Event.type == sf::Event::KeyPressed)
-				player.isRunning(true);
-			if ((im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) && Event.type == sf::Event::KeyReleased)
-				player.isRunning(false);
+			}
+			if (im.CheckInput(Event, sf::Keyboard::D)) {
+				if (Event.type == sf::Event::KeyPressed) 
+					player.MoveK(4);
+				else if (Event.type == sf::Event::KeyReleased) 
+					player.MoveK(20);
+			}
+			if (im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) {
+				if (Event.type == sf::Event::KeyPressed)
+					player.isRunning(true);
+				else if (Event.type == sf::Event::KeyReleased)
+					player.isRunning(false);
+			}
 		}
 
 		player.Update();
@@ -84,6 +89,7 @@ int main()
 		window.clear();
 		npc_01.Draw(window);
 		player.Draw(window);
+
 		window.display();
 	}
 	return EXIT_SUCCESS;

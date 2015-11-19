@@ -6,12 +6,10 @@ using namespace std;
 #include "SFML/Graphics.hpp" 
 #include "SFML/OpenGL.hpp" 
 #include <iostream> 
-#include "ResourceManager.h"
 
 class Player
 {
 private:
-	ResourceManager rm; // All assets will be loaded and set through AN INSTANCE of ResourceManager
 
 	sf::Texture texture;
 	sf::Sprite sprite;

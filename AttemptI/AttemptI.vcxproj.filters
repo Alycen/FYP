@@ -36,9 +36,6 @@
     <ClInclude Include="NPC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SplashScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
