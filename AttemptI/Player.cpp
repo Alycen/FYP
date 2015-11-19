@@ -2,8 +2,7 @@
 
 Player::Player() { }
 
-Player::Player(float x, float y) 
-{
+Player::Player(float x, float y) {
 	position.x = x;
 	position.y = y;
 
@@ -15,28 +14,23 @@ Player::Player(float x, float y)
 	sprite.setScale(xScale, yScale);
 }
 
-void Player::Update() 
-{
+void Player::Update() {
 	if (run) {
 		if (vert) {
-			// If player is running and moving vertically
 			vSpeed = 0.02;
 			hSpeed = 0.02f;
 		}
 		else {
-			// If player is running and not moving vertically
 			vSpeed = 0.04f;
 			hSpeed = 0.03f;
 		}
 	}
 	else {
 		if (vert) {
-			// If player is moving vertically
 			vSpeed = 0.01f;
 			hSpeed = 0.01f;
 		}
 		else {
-			// If player is not moving vertically
 			vSpeed = 0.02f;
 			hSpeed = 0.02f;
 		}
@@ -53,13 +47,11 @@ void Player::Update()
 		position.x += vSpeed;
 }
 
-void Player::Draw(sf::RenderWindow &win) 
-{
+void Player::Draw(sf::RenderWindow &win) {
 	win.draw(sprite);
 }
 
-void Player::MoveK(int dir) 
-{
+void Player::MoveK(int dir) {
 	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
 	if (dir == UP) {
 		up = true;
@@ -91,7 +83,10 @@ void Player::MoveK(int dir)
 		right = false;
 }
 
-void Player::isRunning(bool r) 
-{
+void Player::isRunning(bool r) {
 	run = r;
+}
+
+sf::Sprite Player::GetSprite() {
+	return sprite;
 }

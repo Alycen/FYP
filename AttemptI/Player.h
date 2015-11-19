@@ -34,6 +34,8 @@ public:
 	void MoveK(int dir);
 	void isRunning(bool r);
 
+	sf::Sprite GetSprite();
+
 	Player::~Player() {};
 };
 

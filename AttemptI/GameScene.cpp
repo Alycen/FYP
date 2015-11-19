@@ -5,4 +5,16 @@ GameScene::GameScene() {
 	NPC npc_01 = NPC(600.f, 500.0f);
 }
 
-GameScene::~GameScene() { }
+void GameScene::PlayerControl(int dir) {
+	player.MoveK(dir);
+}
+
+void GameScene::Update() {
+	player.Update();
+	npc_01.Update();
+}
+
+void GameScene::Draw(sf::RenderWindow &win) {
+	player.Draw(win);
+	npc_01.Draw(win);
+}

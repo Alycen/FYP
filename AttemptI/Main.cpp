@@ -33,6 +33,7 @@ int main()
 	InputManager im = InputManager();
 	static SceneManager sm = sceneManagerInstance;
 
+	//GameScene game = GameScene(); // need to change to instance of
 	sf::RenderWindow window(sf::VideoMode(1200, 800, 32), "Project Mk 1");
 	
 	//sf::View camera; //(sf::FloatRect(200, 800, 150, 550));
@@ -55,27 +56,27 @@ int main()
 				window.close();
 
 			if (im.CheckInput(Event, sf::Keyboard::W)) {
-				if (Event.type == sf::Event::KeyPressed) 
+				if (Event.type == sf::Event::KeyPressed)
 					player.MoveK(1);
-				else if (Event.type == sf::Event::KeyReleased) 
+				else if (Event.type == sf::Event::KeyReleased)
 					player.MoveK(5);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::A)) {
-				if (Event.type == sf::Event::KeyPressed) 
+				if (Event.type == sf::Event::KeyPressed)
 					player.MoveK(2);
-				else if (Event.type == sf::Event::KeyReleased) 
+				else if (Event.type == sf::Event::KeyReleased)
 					player.MoveK(10);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::S)) {
-				if (Event.type == sf::Event::KeyPressed) 
+ 				if (Event.type == sf::Event::KeyPressed)
 					player.MoveK(3);
-				else if (Event.type == sf::Event::KeyReleased) 
+				else if (Event.type == sf::Event::KeyReleased)
 					player.MoveK(15);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::D)) {
-				if (Event.type == sf::Event::KeyPressed) 
+				if (Event.type == sf::Event::KeyPressed)
 					player.MoveK(4);
-				else if (Event.type == sf::Event::KeyReleased) 
+				else if (Event.type == sf::Event::KeyReleased)
 					player.MoveK(20);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) {
@@ -85,7 +86,6 @@ int main()
 					player.isRunning(false);
 			}
 		}
-
 		player.Update();
 		npc_01.Update();
 
