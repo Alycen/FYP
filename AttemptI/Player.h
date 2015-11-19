@@ -34,6 +34,7 @@ public:
 	void MoveK(int dir);
 	void isRunning(bool r);
 
+	sf::Vector2f GetPosition();
 	sf::Sprite GetSprite();
 
 	Player::~Player() {};

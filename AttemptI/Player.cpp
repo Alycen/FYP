@@ -87,6 +87,10 @@ void Player::isRunning(bool r) {
 	run = r;
 }
 
+sf::Vector2f Player::GetPosition() {
+	return position;
+}
+
 sf::Sprite Player::GetSprite() {
 	return sprite;
 }
