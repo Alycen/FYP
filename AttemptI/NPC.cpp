@@ -17,7 +17,6 @@ NPC::NPC(float x, float y) {
 void NPC::Update() {
 	sprite.setPosition(position);
 	Move();
-	cout << sprite.getPosition().x << endl;
 }
 
 void NPC::Draw(sf::RenderWindow &win) {
