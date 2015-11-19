@@ -8,12 +8,7 @@
 class InputManager
 {
 private:
-	enum dir {
-		UP,
-		DOWN,
-		LEFT,
-		RIGHT,
-	};
+
 public:
 	InputManager::InputManager() { }
 
