@@ -10,7 +10,6 @@ using namespace std;
 class Player
 {
 private:
-
 	sf::Texture texture;
 	sf::Sprite sprite;
 

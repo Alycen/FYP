@@ -69,17 +69,20 @@ void Player::MoveK(int dir)
 		down = true;
 		vert = true;
 	}
-	if (dir == LEFT)
+	if (dir == LEFT) {
 		left = true;
-	else if (dir == RIGHT)
+	}
+	else if (dir == RIGHT) {
 		right = true;
+	}
 
 	if (dir == UP * 5) {
 		up = false;
 		vert = false;
 	}
-	if (dir == LEFT * 5)
+	if (dir == LEFT * 5) {
 		left = false;
+	}
 	if (dir == DOWN * 5) {
 		down = false;
 		vert = false;

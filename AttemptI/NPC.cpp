@@ -1,11 +1,8 @@
 #include "NPC.h"
 
-using namespace std;
-
 NPC::NPC() { }
 
-NPC::NPC(float x, float y)
-{
+NPC::NPC(float x, float y) {
 	position.x = x;
 	position.y = y;
 
@@ -17,18 +14,30 @@ NPC::NPC(float x, float y)
 	sprite.setScale(xScale, yScale);
 }
 
-void NPC::Update()
-{
+void NPC::Update() {
 	sprite.setPosition(position);
 	Move();
+	cout << sprite.getPosition().x << endl;
 }
 
-void NPC::Draw(sf::RenderWindow &win)
-{
+void NPC::Draw(sf::RenderWindow &win) {
 	win.draw(sprite);
 }
 
-void NPC::Move() 
-{
-	
+void NPC::Move() {
+	if (timer == 0) {
+		timer = 10000;
+		dir = rand() % 4 + 1;
+	}
+	if (dir == 2)
+		sprite.setPosition(position.x += 0.02f, position.y);
+
+	else if (dir == 1)
+		sprite.setPosition(position.x -= 0.02f, position.y);
+
+	else {
+		sprite.setPosition(position.x, position.y);
+	}
+
+	timer--;
 }

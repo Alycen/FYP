@@ -22,6 +22,9 @@
 #include <math.h>
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "GameScene.h"
+
+// Need to add Box2D
 
 int main()
 {
@@ -32,9 +35,9 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode(1200, 800, 32), "Project Mk 1");
 	
-	sf::View camera; //(sf::FloatRect(200, 800, 150, 550));
-	camera.setCenter(sf::Vector2f(600, 400));
-	camera.setSize(sf::Vector2f(1000, 600));
+	//sf::View camera; //(sf::FloatRect(200, 800, 150, 550));
+	//camera.setCenter(sf::Vector2f(600, 400));
+	//camera.setSize(sf::Vector2f(1000, 600));
 	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
 
 	Player player = Player(900.0f, 200.0f);
@@ -67,7 +70,7 @@ int main()
 				if (Event.type == sf::Event::KeyPressed) 
 					player.MoveK(3);
 				else if (Event.type == sf::Event::KeyReleased) 
-				player.MoveK(15);
+					player.MoveK(15);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::D)) {
 				if (Event.type == sf::Event::KeyPressed) 

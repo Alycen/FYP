@@ -10,7 +10,8 @@ using namespace std;
 class NPC
 {
 private:
-	int timer = rand() % 100000 + 1;
+	int timer = 10000;
+	int dir = rand() % 4 + 1;
 
 	sf::Texture texture;
 	sf::Sprite sprite;
