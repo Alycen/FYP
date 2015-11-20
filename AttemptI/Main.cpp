@@ -33,11 +33,9 @@ int main()
 	InputManager im = InputManager();
 	static SceneManager sm = sceneManagerInstance;
 
-	//GameScene game = GameScene(); // need to change to instance of
 	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 1");
 	
-	sf::View camera; //(sf::FloatRect(200, 800, 150, 550));
-	//camera.setCenter(sf::Vector2f(600, 400));
+	sf::View camera; 
 	camera.setSize(sf::Vector2f(1200, 800));
 	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
 
