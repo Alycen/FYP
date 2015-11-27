@@ -49,6 +49,7 @@ void Player::Update() {
 
 void Player::Draw(sf::RenderWindow &win) {
 	win.draw(sprite);
+	
 }
 
 void Player::MoveK(int dir) {
