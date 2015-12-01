@@ -12,10 +12,10 @@ protected:
 public:
 	BaseScene::BaseScene() {} 
 	BaseScene::~BaseScene() {}
-	void BaseScene::Update() {
+	virtual void BaseScene::Update() {
 	
 	}
-	void BaseScene::Draw(sf::RenderWindow &win) {
+	virtual void BaseScene::Draw(sf::RenderWindow &win) {
 		win.draw(sprite);
 	}
 };

@@ -21,7 +21,7 @@ public:
 		return sm;
 	}
 
-	void set(BaseScene* scene);
+	void set(string scene);
 	BaseScene get();
 
 	//void Update(float deltaTime);

@@ -36,14 +36,11 @@ int main()
 	//GameScene game = GameScene();
 	//SplashScene splash = SplashScene();
 
-	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 1");
-	
+	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 1");	
 	sf::View camera; 
 	camera.setSize(sf::Vector2f(1200, 800));
 	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
-
-	//Player player = Player(900.0f, 200.0f);
-	//NPC npc_01 = NPC(600.f, 500.0f);
+	int time = 15000;
 
 	while (window.isOpen())
 	{ 
@@ -55,7 +52,7 @@ int main()
 			
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
-
+			
 			/*if (im.CheckInput(Event, sf::Keyboard::W)) {
 				if (Event.type == sf::Event::KeyPressed)
 					game.PlayerControl(1);
@@ -88,19 +85,19 @@ int main()
 			}*/
 
 		}
+		if (time <= 0) {
+			sm.set("GAME");
+		}
+		time--;
 		//camera.setCenter(player.GetPosition());
 		
 		//window.setView(camera);
 
-		//player.Update();
-		//npc_01.Update();
 		//game.Update();
 		sm.Update();
 		window.clear();
 		sm.Draw(window);
 		//game.Draw(window);
-		//npc_01.Draw(window);
-		//player.Draw(window);
 
 		window.display();
 	}
