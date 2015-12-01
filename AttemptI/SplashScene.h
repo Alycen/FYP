@@ -7,6 +7,7 @@
 class SplashScene : public BaseScene
 {
 private:
+	float ttl;
 public:
 	SplashScene::SplashScene() {
 		texture.loadFromFile("Splash.png");

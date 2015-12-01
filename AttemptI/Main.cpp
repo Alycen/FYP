@@ -22,8 +22,8 @@
 #include <math.h>
 #include "InputManager.h"
 #include "SceneManager.h"
-#include "GameScene.h"
-#include "SplashScene.h"
+//#include "GameScene.h"
+//#include "SplashScene.h"
 
 // Need to add Box2D
 
@@ -33,8 +33,8 @@ int main()
 
 	InputManager im = InputManager();
 	static SceneManager sm = sceneManagerInstance;
-	GameScene game = GameScene();
-	SplashScene splash = SplashScene();
+	//GameScene game = GameScene();
+	//SplashScene splash = SplashScene();
 
 	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 1");
 	
@@ -59,34 +59,26 @@ int main()
 			/*if (im.CheckInput(Event, sf::Keyboard::W)) {
 				if (Event.type == sf::Event::KeyPressed)
 					game.PlayerControl(1);
-				//player.MoveK(1);
 				else if (Event.type == sf::Event::KeyReleased)
 					game.PlayerControl(5);
-					//player.MoveK(5);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::A)) {
 				if (Event.type == sf::Event::KeyPressed)
 					game.PlayerControl(2);
-				//player.MoveK(2);
 				else if (Event.type == sf::Event::KeyReleased)
 					game.PlayerControl(10);
-					//player.MoveK(10);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::S)) {
 				if (Event.type == sf::Event::KeyPressed)
 					game.PlayerControl(3);
-				//player.MoveK(3);
 				else if (Event.type == sf::Event::KeyReleased)
 					game.PlayerControl(15);
-					//player.MoveK(15);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::D)) {
 				if (Event.type == sf::Event::KeyPressed)
 					game.PlayerControl(4);
-				//player.MoveK(4);
 				else if (Event.type == sf::Event::KeyReleased)
 					game.PlayerControl(20);
-					//player.MoveK(20);
 			}
 			if (im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) {
 				if (Event.type == sf::Event::KeyPressed)
@@ -103,9 +95,9 @@ int main()
 		//player.Update();
 		//npc_01.Update();
 		//game.Update();
-		splash.Update();
+		sm.Update();
 		window.clear();
-		splash.Draw(window);
+		sm.Draw(window);
 		//game.Draw(window);
 		//npc_01.Draw(window);
 		//player.Draw(window);

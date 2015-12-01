@@ -11,19 +11,22 @@
 class SceneManager
 {
 private:
-	
+	BaseScene* currentScene;
 public:
-	SceneManager() {}
-	enum SceneType {
-		SCENE_SPLASH,
-		SCENE_MAINMENU,
-		SCENE_GAME,
-		SCENE_LOADING,
-	};
+	SceneManager();
+	~SceneManager();
+
 	static SceneManager &Instance() {
 		static SceneManager sm; 
 		return sm;
 	}
+
+	void set(BaseScene* scene);
+	BaseScene get();
+
+	//void Update(float deltaTime);
+	void Update();
+	void Draw(sf::RenderWindow &win);
 };
 
 extern SceneManager sceneManagerInstance;
