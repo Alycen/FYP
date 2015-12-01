@@ -85,7 +85,7 @@ int main()
 			}*/
 
 		}
-		if (time <= 0) {
+		if (time == 0) {
 			sm.set("GAME");
 		}
 		time--;

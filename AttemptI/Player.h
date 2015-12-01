@@ -6,10 +6,12 @@ using namespace std;
 #include "SFML/Graphics.hpp" 
 #include "SFML/OpenGL.hpp" 
 #include <iostream> 
+#include "InputManager.h"
 
 class Player
 {
 private:
+	InputManager im;
 	sf::Texture texture;
 	sf::Sprite sprite;
 
