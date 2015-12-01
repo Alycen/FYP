@@ -37,7 +37,6 @@ void NPC::Move() {
 	else {
 		sprite.setPosition(position.x, position.y);
 	}
-	cout << "x: " << sprite.getPosition().x << endl;
 
 	timer--;
 }
