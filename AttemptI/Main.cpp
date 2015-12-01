@@ -23,6 +23,7 @@
 #include "InputManager.h"
 #include "SceneManager.h"
 #include "GameScene.h"
+#include "SplashScene.h"
 
 // Need to add Box2D
 
@@ -33,6 +34,7 @@ int main()
 	InputManager im = InputManager();
 	static SceneManager sm = sceneManagerInstance;
 	GameScene game = GameScene();
+	SplashScene splash = SplashScene();
 
 	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 1");
 	
@@ -54,7 +56,7 @@ int main()
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
 
-			if (im.CheckInput(Event, sf::Keyboard::W)) {
+			/*if (im.CheckInput(Event, sf::Keyboard::W)) {
 				if (Event.type == sf::Event::KeyPressed)
 					game.PlayerControl(1);
 				//player.MoveK(1);
@@ -88,10 +90,11 @@ int main()
 			}
 			if (im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) {
 				if (Event.type == sf::Event::KeyPressed)
-					game.player.isRunning(true);
+					game.player->isRunning(true);
 				else if (Event.type == sf::Event::KeyReleased)
-					game.player.isRunning(false);
-			}
+					game.player->isRunning(false);
+			}*/
+
 		}
 		//camera.setCenter(player.GetPosition());
 		
@@ -99,9 +102,11 @@ int main()
 
 		//player.Update();
 		//npc_01.Update();
-		game.Update();
+		//game.Update();
+		splash.Update();
 		window.clear();
-		game.Draw(window);
+		splash.Draw(window);
+		//game.Draw(window);
 		//npc_01.Draw(window);
 		//player.Draw(window);
 

@@ -12,10 +12,10 @@
 class GameScene : public BaseScene
 {
 private:
-	NPC npc_01;
+	NPC* npc_01;
 public:
 	sf::RenderWindow *window;//(sf::VideoMode(1200, 800, 32), "Project Mk 1");
-	Player player;
+	Player* player;
 	GameScene();
 	void PlayerControl(int dir);
 	void Update();

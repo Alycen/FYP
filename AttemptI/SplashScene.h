@@ -7,9 +7,14 @@
 class SplashScene : public BaseScene
 {
 private:
-	
 public:
-	SplashScene::SplashScene() {}
+	SplashScene::SplashScene() {
+		texture.loadFromFile("Splash.png");
+		texture.setSmooth(true);
+		
+		sprite.setTexture(texture);
+		sprite.setPosition(texture.getSize().x / 3, texture.getSize().y / 4);
+	}
 };
 
 #endif
