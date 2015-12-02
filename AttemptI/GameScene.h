@@ -18,7 +18,7 @@ public:
 	GameScene();
 	
 	void PlayerControl(int dir);
-	void Update();
+	void Update(sf::Event event);
 	void Draw(sf::RenderWindow &win);
 
 	GameScene::~GameScene() { };

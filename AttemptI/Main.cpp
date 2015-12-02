@@ -52,38 +52,9 @@ int main()
 			
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
-			
-			/*if (im.CheckInput(Event, sf::Keyboard::W)) {
-				if (Event.type == sf::Event::KeyPressed)
-					game.PlayerControl(1);
-				else if (Event.type == sf::Event::KeyReleased)
-					game.PlayerControl(5);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::A)) {
-				if (Event.type == sf::Event::KeyPressed)
-					game.PlayerControl(2);
-				else if (Event.type == sf::Event::KeyReleased)
-					game.PlayerControl(10);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::S)) {
-				if (Event.type == sf::Event::KeyPressed)
-					game.PlayerControl(3);
-				else if (Event.type == sf::Event::KeyReleased)
-					game.PlayerControl(15);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::D)) {
-				if (Event.type == sf::Event::KeyPressed)
-					game.PlayerControl(4);
-				else if (Event.type == sf::Event::KeyReleased)
-					game.PlayerControl(20);
-			}
-			if (im.CheckInput(Event, sf::Keyboard::LShift) || im.CheckInput(Event, sf::Keyboard::RShift)) {
-				if (Event.type == sf::Event::KeyPressed)
-					game.player->isRunning(true);
-				else if (Event.type == sf::Event::KeyReleased)
-					game.player->isRunning(false);
-			}*/
 
+
+			sm.Update(Event);
 		}
 		if (time == 0) {
 			sm.set("GAME");
@@ -93,11 +64,9 @@ int main()
 		
 		//window.setView(camera);
 
-		//game.Update();
-		sm.Update();
+		sm.Update(Event);
 		window.clear();
 		sm.Draw(window);
-		//game.Draw(window);
 
 		window.display();
 	}

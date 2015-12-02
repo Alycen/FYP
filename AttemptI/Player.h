@@ -24,13 +24,14 @@ private:
 
 	bool vert = false;
 	bool run = false;
+	bool smell = false;
 	bool left = false, right = false, up = false, down = false;
 
 public:
 	Player();
 	Player(float x, float y);
 
-	void Update();
+	void Update(sf::Event event);
 	void Draw(sf::RenderWindow &win);
 
 	void MoveK(int dir);

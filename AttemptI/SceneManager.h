@@ -25,7 +25,7 @@ public:
 	BaseScene get();
 
 	//void Update(float deltaTime);
-	void Update();
+	void Update(sf::Event);
 	void Draw(sf::RenderWindow &win);
 };
 

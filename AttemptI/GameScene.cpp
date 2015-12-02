@@ -9,10 +9,11 @@ void GameScene::PlayerControl(int dir) {
 	player->MoveK(dir);
 }
 
-void GameScene::Update() {
-	player->Update();
+void GameScene::Update(sf::Event event) {
+	player->Update(event);
 	npc_01->Update();
 }
+
 
 void GameScene::Draw(sf::RenderWindow &win) {
 	player->Draw(win);

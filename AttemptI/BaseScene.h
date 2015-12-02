@@ -12,7 +12,7 @@ protected:
 public:
 	BaseScene::BaseScene() {} 
 	BaseScene::~BaseScene() {}
-	virtual void BaseScene::Update() {
+	virtual void BaseScene::Update(sf::Event event) {
 	
 	}
 	virtual void BaseScene::Draw(sf::RenderWindow &win) {
