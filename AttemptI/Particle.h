@@ -11,6 +11,7 @@ private:
 	sf::Sprite sprite;
 public:
 	Particle();
+	Particle(float x, float y);
 	~Particle();
 
 	void Update();

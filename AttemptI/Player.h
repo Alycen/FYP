@@ -14,13 +14,15 @@ private:
 	InputManager im;
 	sf::Texture texture;
 	sf::Sprite sprite;
+	sf::Sprite head;
+
+	float rotation;
 
 	sf::Vector2f position;
 	sf::Vector2f velocity;
 	float xScale = 0.3f;
 	float yScale = 0.3f;
-	float vSpeed = 0.03f;
-	float hSpeed = 0.01f;
+	float speed = 0.03f;
 
 	bool vert = false;
 	bool run = false;

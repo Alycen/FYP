@@ -11,6 +11,8 @@ Player::Player(float x, float y) {
 	texture.setSmooth(true);
 
 	sprite.setTexture(texture);
+	sprite.setOrigin(sprite.getLocalBounds().width / 2, sprite.getLocalBounds().height);
+	sprite.setRotation(0);
 	sprite.setPosition(position);
 	sprite.setScale(xScale, yScale);
 }
@@ -53,22 +55,18 @@ void Player::Update(sf::Event event) {
 
 	if (run) {
 		if (vert) {
-			vSpeed = 0.02;
-			hSpeed = 0.02f;
+			speed = 0.03f;
 		}
 		else {
-			vSpeed = 0.04f;
-			hSpeed = 0.03f;
+			speed = 0.04f;
 		}
 	}
 	else {
 		if (vert) {
-			vSpeed = 0.01f;
-			hSpeed = 0.01f;
+			speed = 0.02f;
 		}
 		else {
-			vSpeed = 0.02f;
-			hSpeed = 0.02f;
+			speed = 0.03f;
 		}
 	}
 
@@ -78,13 +76,13 @@ void Player::Update(sf::Event event) {
 
 	sprite.setPosition(position);
 	if (up)
-		position.y -= hSpeed;
+		position.y -= speed;
 	else if (down)
-		position.y += hSpeed;
+		position.y += speed;
 	if (left)
-		position.x -= vSpeed;
+		position.x -= speed;
 	else if (right) 
-		position.x += vSpeed;
+		position.x += speed;
 }
 
 void Player::Draw(sf::RenderWindow &win) {
@@ -95,17 +93,45 @@ void Player::MoveK(int dir) {
 	int UP = 1, LEFT = 2, DOWN = 3, RIGHT = 4;
 	if (dir == UP) {
 		up = true;
+		down = false;
 		vert = true;
+		if (right)
+			sprite.setRotation(45);
+		else if (left)
+			sprite.setRotation(315);
+		else if (!right || !left)
+			sprite.setRotation(0);
 	}
 	else if (dir == DOWN) {
 		down = true;
+		up = false;
 		vert = true;
+		if (right)
+			sprite.setRotation(135);
+		else if (left)
+			sprite.setRotation(225);
+		else if (!left || ! right)
+			sprite.setRotation(180);
 	}
 	if (dir == LEFT) {
 		left = true;
+		right = false;
+		if (down)
+			sprite.setRotation(225);
+		else if (up)
+			sprite.setRotation(315);
+		else if (!down || !up)
+			sprite.setRotation(270);
 	}
 	else if (dir == RIGHT) {
 		right = true;
+		left = false; 
+		if (down)
+			sprite.setRotation(135);
+		else if (up)
+			sprite.setRotation(45);
+		else if (!down || !up)
+			sprite.setRotation(90);
 	}
 
 	if (dir == UP * 5) {
