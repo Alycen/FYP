@@ -21,7 +21,6 @@ private:
 	float rotation;
 
 	sf::Vector2f position;
-	//sf::Vector2f velocity;
 	sf::Vector2f direction;
 	float xScale = 0.3f;
 	float yScale = 0.3f;

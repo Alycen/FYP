@@ -8,17 +8,18 @@
 #include "BaseScene.h"
 #include "Player.h"
 #include "NPC.h"
+#include <list>
 
 class GameScene : public BaseScene
 {
 private:
 	Player* player;
 	NPC* npc_01;
+	list<NPC*> npcs;
 public:
 	GameScene();
 	
 	void Update();
-	void UpdateInput(sf::Event event);
 	void Draw(sf::RenderWindow &win);
 
 	GameScene::~GameScene() { };
