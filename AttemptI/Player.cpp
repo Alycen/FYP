@@ -20,7 +20,7 @@ Player::Player(float x, float y) {
 	texture_Head.setSmooth(true);
 
 	head.setTexture(texture_Head);
-	head.setOrigin(sprite.getOrigin().x - 7.5f, sprite.getOrigin().y + 30);
+	head.setOrigin(sprite.getOrigin().x - 7.5f, sprite.getOrigin().y + 40);
 	head.setPosition(position);
 	head.setScale(xScale, yScale);
 
@@ -69,7 +69,7 @@ void Player::Update() {
 	//}
 
 	if (run) {
-		speed = 0.04;
+		speed = 0.045;
 	}
 	else {
 		speed = 0.02;
@@ -88,7 +88,7 @@ void Player::Update() {
 	if(length > 0)	{
 		sf::Vector2f normalised = direction / length;
 		position += normalised * speed;
-		sprite.setRotation(atan2(normalised.y, normalised.x) * 180 / (22.0f/7.0f) - 90.0f);
+		sprite.setRotation(atan2(normalised.y, normalised.x) * 180 / (22.0f/7.0f) - 270.0f);
 	}
 }
 
