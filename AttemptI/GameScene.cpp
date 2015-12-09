@@ -5,12 +5,8 @@ GameScene::GameScene() {
 	npc_01 = new NPC(600.f, 500.0f);
 }
 
-void GameScene::PlayerControl(int dir) {
-	player->MoveK(dir);
-}
-
-void GameScene::Update(sf::Event event) {
-	player->Update(event);
+void GameScene::Update() {
+	player->Update();
 	npc_01->Update();
 }
 

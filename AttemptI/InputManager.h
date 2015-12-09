@@ -1,25 +1,56 @@
-#pragma once
-#ifndef INPUTMANAGER_H
-#define INPUTMANAGER_H
-
-#include "SFML/Graphics.hpp" 
-#include "SFML/OpenGL.hpp" 
-
+#ifndef INPUTMANAGER
+#define INPUTMANAGER
+#include <list>
+#include "SFML\Graphics.hpp"
 class InputManager
 {
-private:
-
 public:
-	InputManager::InputManager() { }
-
-	bool InputManager::CheckInput(sf::Event event, sf::Keyboard::Key key) {
-		if (/*event.type == sf::Event::KeyPressed &&*/ event.key.code == key)
-			return true;
-		else
-			return false;
+	//Functions
+	static InputManager* GetInstance();
+	~InputManager()
+	{
+		instanceFlag = false;
 	}
 
-	InputManager::~InputManager() { }
+	void UpdateState();
+	void UpdatePolledEvents(sf::Event e);
+	bool IsKeyDown(sf::Keyboard::Key key);
+	bool IsKeyHeld(sf::Keyboard::Key key);
+	bool IsKeyReleased(sf::Keyboard::Key key);
+
+	bool IsMouseButtonDown(int mouseButtonIndex);
+	bool IsMouseButtonHeld(int mouseButtonIndex);
+	bool IsMouseButtonReleased(int mouseButtonIndex);
+	sf::Vector2f GetMousePos();
+
+	//Variables
+
+private:
+	//Functions
+	InputManager()
+	{
+		//private constructor
+		downKeys = std::list<sf::Keyboard::Key>();
+		heldKeys = std::list<sf::Keyboard::Key>();
+		releasedKeys = std::list<sf::Keyboard::Key>();
+
+		downClicks = std::list<int>();
+		heldClicks = std::list<int>();
+		releasedClicks = std::list<int>();
+	}
+
+	//Variables
+	std::list<sf::Keyboard::Key> downKeys;
+	std::list<sf::Keyboard::Key> heldKeys;
+	std::list<sf::Keyboard::Key> releasedKeys;
+
+	std::list<int> downClicks;
+	std::list<int> heldClicks;
+	std::list<int> releasedClicks;
+	sf::Vector2f mousePos;
+
+	static bool instanceFlag;
+	static InputManager *instance;
 };
 
 #endif

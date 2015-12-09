@@ -6,37 +6,37 @@ using namespace std;
 #include "SFML/Graphics.hpp" 
 #include "SFML/OpenGL.hpp" 
 #include <iostream> 
+#include <math.h>
 #include "InputManager.h"
+#include "Smell.h"
 
 class Player
 {
 private:
-	InputManager im;
 	sf::Texture texture;
 	sf::Sprite sprite;
+	sf::Texture texture_Head;
 	sf::Sprite head;
-
+	//Smell smellSence;
 	float rotation;
 
 	sf::Vector2f position;
-	sf::Vector2f velocity;
+	//sf::Vector2f velocity;
+	sf::Vector2f direction;
 	float xScale = 0.3f;
 	float yScale = 0.3f;
 	float speed = 0.03f;
 
-	bool vert = false;
 	bool run = false;
 	bool smell = false;
-	bool left = false, right = false, up = false, down = false;
 
 public:
 	Player();
 	Player(float x, float y);
 
-	void Update(sf::Event event);
+	void Update();
 	void Draw(sf::RenderWindow &win);
 
-	void MoveK(int dir);
 	void isRunning(bool r);
 
 	sf::Vector2f GetPosition();

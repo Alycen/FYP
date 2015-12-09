@@ -31,7 +31,6 @@ int main()
 {
 	srand(time(NULL));
 
-	InputManager im = InputManager();
 	static SceneManager sm = sceneManagerInstance;
 	//GameScene game = GameScene();
 	//SplashScene splash = SplashScene();
@@ -47,24 +46,24 @@ int main()
 		sf::Event Event;
 		while (window.pollEvent(Event))
 		{
+			InputManager::GetInstance()->UpdatePolledEvents(Event);
 			if (Event.type == sf::Event::Closed)
 				window.close();
 			
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
-
-
-			sm.Update(Event);
 		}
 		if (time == 0) {
 			sm.set("GAME");
 		}
 		time--;
-		//camera.setCenter(player.GetPosition());
+		//camera.setCenter(player->GetPosition());
 		
 		//window.setView(camera);
 
-		sm.Update(Event);
+		sm.Update();
+
+		InputManager::GetInstance()->UpdateState();
 		window.clear();
 		sm.Draw(window);
 

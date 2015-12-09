@@ -10,7 +10,7 @@ private:
 	float ttl;
 public:
 	SplashScene::SplashScene() {
-		texture.loadFromFile("Splash.png");
+		texture.loadFromFile("Assets/Splash.png");
 		texture.setSmooth(true);
 		
 		sprite.setTexture(texture);

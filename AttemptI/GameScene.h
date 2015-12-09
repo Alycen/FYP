@@ -17,8 +17,8 @@ private:
 public:
 	GameScene();
 	
-	void PlayerControl(int dir);
-	void Update(sf::Event event);
+	void Update();
+	void UpdateInput(sf::Event event);
 	void Draw(sf::RenderWindow &win);
 
 	GameScene::~GameScene() { };

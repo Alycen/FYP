@@ -30,8 +30,8 @@ BaseScene SceneManager::get() {
 }
 
 //void SceneManager::Update(float deltaTime) {
-void SceneManager::Update(sf::Event event) {
-	currentScene->Update(event);
+void SceneManager::Update() {
+	currentScene->Update();
 }
 
 void SceneManager::Draw(sf::RenderWindow &win) {

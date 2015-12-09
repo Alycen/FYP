@@ -57,6 +57,9 @@
     <ClInclude Include="Emitter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Smell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -83,12 +86,18 @@
     <ClCompile Include="Particle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Player.png">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="npc.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="head.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
