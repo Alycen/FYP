@@ -10,7 +10,6 @@ void GameScene::Update() {
 	npc_01->Update();
 }
 
-
 void GameScene::Draw(sf::RenderWindow &win) {
 	player->Draw(win);
 	npc_01->Draw(win);

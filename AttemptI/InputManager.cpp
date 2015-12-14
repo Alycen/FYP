@@ -131,8 +131,6 @@ bool InputManager::IsKeyReleased(sf::Keyboard::Key key)
 	return false;
 }
 
-
-
 bool InputManager::IsMouseButtonDown(int mouseButtonIndex)
 {
 	std::list<int>::iterator iter = std::find(downClicks.begin(), downClicks.end(), mouseButtonIndex);

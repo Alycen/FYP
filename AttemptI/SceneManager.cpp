@@ -38,7 +38,6 @@ void SceneManager::Draw(sf::RenderWindow &win) {
 	currentScene->Draw(win);
 }
 
-
 SceneManager::~SceneManager() {
 	currentScene->~BaseScene();
 }
