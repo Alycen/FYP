@@ -10,6 +10,8 @@ using namespace std;
 #include "InputManager.h"
 #include "Smell.h"
 
+#define DistanceToNeck 12.5
+
 class Player
 {
 private:
@@ -25,9 +27,11 @@ private:
 	float xScale = 0.3f;
 	float yScale = 0.3f;
 	float speed = 0.03f;
-
 	bool run = false;
+
 	bool smell = false;
+	sf::CircleShape smellCircle;
+	float radius;
 
 public:
 	Player();
@@ -37,8 +41,10 @@ public:
 	void Draw(sf::RenderWindow &win);
 
 	void isRunning(bool r);
+	void Smell();
 
 	sf::Vector2f GetPosition();
+	void SetPosition(float x, float y);
 	sf::Sprite GetSprite();
 
 	Player::~Player() {};

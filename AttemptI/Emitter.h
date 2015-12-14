@@ -10,6 +10,7 @@ class Emitter {
 private:
 	sf::Vector2f position;
 	list<Particle*> particles;
+	sf::Color colour;
 public:
 	Emitter();
 	~Emitter();

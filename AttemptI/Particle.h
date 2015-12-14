@@ -9,6 +9,7 @@ private:
 	sf::Vector2f velocity;
 	sf::Texture texture;
 	sf::Sprite sprite;
+	sf::Color colour;
 public:
 	Particle();
 	Particle(float x, float y);

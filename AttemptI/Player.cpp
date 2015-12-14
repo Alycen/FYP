@@ -20,8 +20,8 @@ Player::Player(float x, float y) {
 	texture_Head.setSmooth(true);
 
 	head.setTexture(texture_Head);
-	head.setOrigin(sprite.getOrigin().x - 7.5f, sprite.getOrigin().y + 40);
-	head.setPosition(position);
+	head.setOrigin(21.0f, 37.0f);
+	head.setPosition(position.x, position.y - DistanceToNeck);
 	head.setScale(xScale, yScale);
 }
 
@@ -81,9 +81,6 @@ void Player::Update() {
 		//smellSence.Activate();
 	}
 
-	sprite.setPosition(position);
-	head.setPosition(position);
-
 	//Normalise direction
 	float length = sqrt((direction.x * direction.x) + (direction.y * direction.y));
 	
@@ -91,14 +88,19 @@ void Player::Update() {
 		sf::Vector2f normalised = direction / length;
 		position += normalised * speed;
 		sprite.setRotation(atan2(normalised.y, normalised.x) * 180 / (22.0f/7.0f) + 90.0f);
+
+		sprite.setPosition(position);
+		head.setPosition(position + (normalised * (float)DistanceToNeck));
+		head.setRotation(atan2(normalised.y, normalised.x) * 180 / (22.0f / 7.0f) + 90.0f);
 	}
+
 }
 
 void Player::Draw(sf::RenderWindow &win) {
 	win.draw(sprite);
-	//win.draw(head);
+	win.draw(head);
 	//if (smell)
-	//	smellSence.Draw(win);
+	//	smellSence.Draw(win);  //??
 }
 
 void Player::isRunning(bool r) {
@@ -107,6 +109,10 @@ void Player::isRunning(bool r) {
 
 sf::Vector2f Player::GetPosition() {
 	return position;
+}
+
+void Player::SetPosition(float x, float y) {
+	position = sf::Vector2f(x, y);
 }
 
 sf::Sprite Player::GetSprite() {
