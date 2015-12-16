@@ -60,6 +60,9 @@
     <ClInclude Include="Smell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -92,6 +95,9 @@
     <ClCompile Include="Smell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Player.png">
@@ -103,5 +109,22 @@
     <Image Include="head.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Assets\tiles\grass.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\tiles\path.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\tiles\soil.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\tiles\water.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Level1.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

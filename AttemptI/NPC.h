@@ -7,6 +7,8 @@ using namespace std;
 #include "SFML/OpenGL.hpp" 
 #include <iostream> 
 
+#define DistanceToNeck 12.5
+
 class NPC
 {
 private:
@@ -15,11 +17,14 @@ private:
 
 	sf::Texture texture;
 	sf::Sprite sprite;
+	sf::Texture texture_Head;
+	sf::Sprite head;
 
 	sf::Vector2f position;
-	sf::Vector2f velocity;
+	sf::Vector2f direction;
 	float xScale = 0.3f;
 	float yScale = 0.3f;
+	float speed = 0.1f;
 
 public:
 	NPC();

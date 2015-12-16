@@ -9,13 +9,16 @@
 #include "Player.h"
 #include "NPC.h"
 #include <list>
+#include "Tile.h"
 
 class GameScene : public BaseScene
 {
 private:
 	Player* player;
 	NPC* npc_01;
+
 	list<NPC*> npcs;
+	list<Tile*> tiles;
 public:
 	GameScene();
 	
