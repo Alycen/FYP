@@ -23,6 +23,9 @@ Player::Player(float x, float y) {
 	head.setOrigin(21.0f, 37.0f);
 	head.setPosition(position.x, position.y - DistanceToNeck);
 	head.setScale(xScale, yScale);
+
+	barkbuffer.loadFromFile("Assets/Sounds/14_DOGGI.wav");
+	barksound.setBuffer(barkbuffer);
 }
 
 void Player::Update() {
@@ -92,6 +95,10 @@ void Player::Update() {
 		sprite.setPosition(position);
 		head.setPosition(position + (normalised * (float)DistanceToNeck));
 		head.setRotation(atan2(normalised.y, normalised.x) * 180 / (22.0f / 7.0f) + 90.0f);
+	}
+
+	if (InputManager::GetInstance()->IsKeyDown(sf::Keyboard::E)) {
+		barksound.play();
 	}
 
 }

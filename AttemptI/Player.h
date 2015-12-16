@@ -5,6 +5,7 @@ using namespace std;
 
 #include "SFML/Graphics.hpp" 
 #include "SFML/OpenGL.hpp" 
+#include "SFML\Audio.hpp"
 #include <iostream> 
 #include <math.h>
 #include "InputManager.h"
@@ -33,6 +34,8 @@ private:
 	sf::CircleShape smellCircle;
 	float radius;
 
+	sf::SoundBuffer barkbuffer;
+	sf::Sound barksound;
 public:
 	Player();
 	Player(float x, float y);
