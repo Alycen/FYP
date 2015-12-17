@@ -36,23 +36,29 @@ void NPC::Draw(sf::RenderWindow &win) {
 
 void NPC::Move() {
 	if (timer == 0) {
-		timer = 10000;
-		dir = rand() % 4 + 1;
+		timer = 5000;
+		dir = rand() % 7 + 1;
 	}
-	if (dir == 2) {
+
+	if (dir == 2 && position.x < 790) {
 		direction.x++;
 		//sprite.setPosition(position.x += 0.02f, position.y);
 	}
-	else if (dir == 1) {
+	else if (dir == 1 && position.x > 10) {
 		direction.x--;
 		//sprite.setPosition(position.x -= 0.02f, position.y);
 	}
+	else if (dir == 4 && position.y < 590) {
+		direction.y++;
+	}
+	else if (dir == 3 && position.y > 10) {
+		direction.y--;
+	}
 	else {
 		direction.x = 0;
+		direction.y = 0;
 		//sprite.setPosition(position.x, position.y);
 	}
-
-	timer--;
 
 	float length = sqrt((direction.x * direction.x) + (direction.y * direction.y));
 
@@ -65,4 +71,6 @@ void NPC::Move() {
 		head.setPosition(position + (normalised * (float)DistanceToNeck));
 		head.setRotation(atan2(normalised.y, normalised.x) * 180 / (22.0f / 7.0f) + 90.0f);
 	}
+
+	timer--;
 }

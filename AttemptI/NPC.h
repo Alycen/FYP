@@ -12,8 +12,8 @@ using namespace std;
 class NPC
 {
 private:
-	int timer = 10000;
-	int dir = rand() % 4 + 1;
+	int timer = 5000;
+	int dir = rand() % 7 + 1;
 
 	sf::Texture texture;
 	sf::Sprite sprite;
@@ -24,7 +24,7 @@ private:
 	sf::Vector2f direction;
 	float xScale = 0.3f;
 	float yScale = 0.3f;
-	float speed = 0.1f;
+	float speed = 0.03f;
 
 public:
 	NPC();

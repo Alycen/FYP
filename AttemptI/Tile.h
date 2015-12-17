@@ -10,6 +10,7 @@ private:
 	sf::Vector2f position;
 	sf::Texture texture;
 	sf::Sprite sprite;
+	std::string type;
 public:
 	Tile();
 	Tile(std::string name, float x, float y);
