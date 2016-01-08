@@ -5,16 +5,16 @@ Tile::Tile() { }
 Tile::Tile(std::string name, float x, float y) {
 	type = name;
 	if (type == "soil") {
-		texture.loadFromFile("Assets/tiles/soil.png");
+		texture.loadFromFile("Assets/tiles/soil_d.png");
 	}
 	else if (type == "water") {
-		texture.loadFromFile("Assets/tiles/water.png");
+		texture.loadFromFile("Assets/tiles/water_d.png");
 	}
 	else if (type == "grass") {
-		texture.loadFromFile("Assets/tiles/grass.png");
+		texture.loadFromFile("Assets/tiles/grass_d.png");
 	}
 	else if (type == "path") {
-		texture.loadFromFile("Assets/tiles/path.png");
+		texture.loadFromFile("Assets/tiles/path_d.png");
 	}
 	texture.setSmooth(true);
 

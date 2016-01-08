@@ -121,9 +121,9 @@ void Player::Draw(sf::RenderWindow &win) {
 	win.draw(sprite);
 	win.draw(head);
 	if (smell)
-		win.draw(smellCircle);q
+		win.draw(smellCircle);
 		if (smellCircle.getRadius() < radius) {
-			smellCircle.setRadius(smellCircle.getRadius() + .075f);
+			smellCircle.setRadius(smellCircle.getRadius() + .1f);
 			smellCircle.setPosition(position.x - (smellCircle.getRadius()), position.y - (smellCircle.getRadius()));
 		}
 		else if (smellCircle.getRadius() == radius) {
@@ -145,4 +145,8 @@ void Player::SetPosition(float x, float y) {
 
 sf::Sprite Player::GetSprite() {
 	return sprite;
+}
+
+sf::CircleShape Player::GetCircle() {
+	return smellCircle;
 }

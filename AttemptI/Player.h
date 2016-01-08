@@ -44,7 +44,7 @@ public:
 
 	void isRunning(bool r);
 	void Smell();
-
+	sf::CircleShape GetCircle();
 	sf::Vector2f GetPosition();
 	void SetPosition(float x, float y);
 	sf::Sprite GetSprite();
