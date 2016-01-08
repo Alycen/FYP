@@ -23,16 +23,16 @@ GameScene::GameScene() {
 	for (y = 0; y < MAP_H; y++) {
 		for (x = 0; x < MAP_W; x++) {
 			if (map[count] == 0) {
-				tiles.push_back(new Tile("grass", 128 * x, 128 * y));
+				tiles.push_back(new Tile("grass", 64 * x,64 * y));
 			}
 			else if (map[count] == 1) {
-				tiles.push_back(new Tile("soil", 128 * x, 128 * y));
+				tiles.push_back(new Tile("soil", 64 * x, 64 * y));
 			}
 			else if (map[count] == 2) {
-				tiles.push_back(new Tile("path", 128 * x, 128 * y));
+				tiles.push_back(new Tile("path", 64 * x, 64 * y));
 			}
 			else if (map[count] == 3) {
-				tiles.push_back(new Tile("water", 128 * x, 128 * y));
+				tiles.push_back(new Tile("water", 64 * x, 64 * y));
 			}
 			count++;
 		}
