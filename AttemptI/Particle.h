@@ -10,6 +10,7 @@ private:
 	sf::Texture texture;
 	sf::Sprite sprite;
 	sf::Color colour;
+	bool visible;
 public:
 	Particle();
 	Particle(float x, float y);
@@ -17,6 +18,10 @@ public:
 
 	void Update();
 	void Draw(sf::RenderWindow &win);
+	void toPlayer(sf::Vector2f &target);
+	void setColour(sf::Color col);
+	void trail(sf::Vector2f pos);
+	void setVisible(bool vis);
 };
 
 #endif
