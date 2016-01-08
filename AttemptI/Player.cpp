@@ -29,7 +29,7 @@ Player::Player(float x, float y) {
 	barkbuffer.loadFromFile("Assets/Sounds/14_DOGGI.wav");
 	barksound.setBuffer(barkbuffer);
 
-	radius = 40.0f;
+	radius = 500.0f;
 }
 
 void Player::Update() {
@@ -112,17 +112,23 @@ void Player::Smell() {
 	//smellCircle.setOrigin(position);
 	smellCircle.setPosition(position.x - (smellCircle.getRadius()), position.y - (smellCircle.getRadius()));
 	smellCircle.setRadius(0.0f);
+	smellCircle.setFillColor(sf::Color::Transparent);
+	smellCircle.setOutlineColor(sf::Color::White);
+	smellCircle.setOutlineThickness(3);
 }
 
 void Player::Draw(sf::RenderWindow &win) {
 	win.draw(sprite);
 	win.draw(head);
-	if (smell)	
+	if (smell)
+		win.draw(smellCircle);q
 		if (smellCircle.getRadius() < radius) {
-			smellCircle.setRadius(smellCircle.getRadius() + .05f);
+			smellCircle.setRadius(smellCircle.getRadius() + .075f);
 			smellCircle.setPosition(position.x - (smellCircle.getRadius()), position.y - (smellCircle.getRadius()));
 		}
-		win.draw(smellCircle);
+		else if (smellCircle.getRadius() == radius) {
+			smell = false;
+		}
 }
 
 void Player::isRunning(bool r) {
