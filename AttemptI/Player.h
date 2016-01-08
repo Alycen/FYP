@@ -20,7 +20,6 @@ private:
 	sf::Sprite sprite;
 	sf::Texture texture_Head;
 	sf::Sprite head;
-	//Smell smellSence;
 	float rotation;
 
 	sf::Vector2f position;

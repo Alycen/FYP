@@ -23,7 +23,11 @@ GameScene::GameScene() {
 	for (y = 0; y < MAP_H; y++) {
 		for (x = 0; x < MAP_W; x++) {
 			if (map[count] == 0) {
+<<<<<<< HEAD
 				tiles.push_back(new Tile("grass", 64 * x,64 * y));
+=======
+				tiles.push_back(new Tile("grass", 64 * x, 64 * y));
+>>>>>>> e30c3b8ad1bbbc5780ef9581739f806945654eb3
 			}
 			else if (map[count] == 1) {
 				tiles.push_back(new Tile("soil", 64 * x, 64 * y));

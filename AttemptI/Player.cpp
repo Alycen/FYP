@@ -2,6 +2,8 @@
 
 Player::Player() { }
 
+//https://github.com/SFML/SFML/wiki/Tutorial:-Manage-different-Screens
+
 Player::Player(float x, float y) {
 	//smellSence = Smell();
 	position.x = x;
@@ -26,6 +28,8 @@ Player::Player(float x, float y) {
 
 	barkbuffer.loadFromFile("Assets/Sounds/14_DOGGI.wav");
 	barksound.setBuffer(barkbuffer);
+
+	radius = 40.0f;
 }
 
 void Player::Update() {
@@ -66,12 +70,15 @@ void Player::Update() {
 	}
 
 	// Smell
-	//if (InputManager::GetInstance()->IsKeyDown(sf::Keyboard::LAlt) || InputManager::GetInstance()->IsKeyDown(sf::Keyboard::RAlt)) {
-	//	smell = true;
-	//}
-	//else if (InputManager::GetInstance()->IsKeyReleased(sf::Keyboard::LAlt) || InputManager::GetInstance()->IsKeyReleased(sf::Keyboard::RAlt)) {
-	//  smell = false;
-	//}
+	if (InputManager::GetInstance()->IsKeyDown(sf::Keyboard::LAlt) || InputManager::GetInstance()->IsKeyDown(sf::Keyboard::RAlt)) {
+		Smell();
+	}
+	if (InputManager::GetInstance()->IsKeyHeld(sf::Keyboard::LAlt) || InputManager::GetInstance()->IsKeyHeld(sf::Keyboard::RAlt)) {
+		smell = true;
+	}
+	else if (InputManager::GetInstance()->IsKeyReleased(sf::Keyboard::LAlt) || InputManager::GetInstance()->IsKeyReleased(sf::Keyboard::RAlt)) {
+	    smell = false;
+	}
 
 	if (run) {
 		speed = 0.15;
@@ -81,7 +88,6 @@ void Player::Update() {
 	}
 
 	if (smell) {
-		//smellSence.Activate();
 	}
 
 	//Normalise direction
@@ -100,14 +106,23 @@ void Player::Update() {
 	if (InputManager::GetInstance()->IsKeyDown(sf::Keyboard::E)) {
 		barksound.play();
 	}
+}
 
+void Player::Smell() {
+	//smellCircle.setOrigin(position);
+	smellCircle.setPosition(position.x - (smellCircle.getRadius()), position.y - (smellCircle.getRadius()));
+	smellCircle.setRadius(0.0f);
 }
 
 void Player::Draw(sf::RenderWindow &win) {
 	win.draw(sprite);
 	win.draw(head);
-	//if (smell)
-	//	smellSence.Draw(win);  //??
+	if (smell)	
+		if (smellCircle.getRadius() < radius) {
+			smellCircle.setRadius(smellCircle.getRadius() + .05f);
+			smellCircle.setPosition(position.x - (smellCircle.getRadius()), position.y - (smellCircle.getRadius()));
+		}
+		win.draw(smellCircle);
 }
 
 void Player::isRunning(bool r) {
