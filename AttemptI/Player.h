@@ -9,7 +9,7 @@ using namespace std;
 #include <iostream> 
 #include <math.h>
 #include "InputManager.h"
-#include "Smell.h"
+#include "Camera.h"
 
 #define DistanceToNeck 12.5
 
@@ -38,6 +38,14 @@ private:
 public:
 	Player();
 	Player(float x, float y);
+	~Player() {
+		delete instance;
+		instanceFlag = false;
+	}
+	static Player* GetInstance();
+
+	static bool instanceFlag;
+	static Player* instance;
 
 	void Update();
 	void Draw(sf::RenderWindow &win);
@@ -49,7 +57,6 @@ public:
 	void SetPosition(float x, float y);
 	sf::Sprite GetSprite();
 
-	Player::~Player() {};
 };
 
 #endif

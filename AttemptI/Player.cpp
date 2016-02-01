@@ -4,6 +4,20 @@ Player::Player() { }
 
 //https://github.com/SFML/SFML/wiki/Tutorial:-Manage-different-Screens
 
+bool Player::instanceFlag = false;
+Player* Player::instance = NULL;
+
+Player* Player::GetInstance() {
+	if (!instanceFlag) {
+		instance = new Player;
+		instanceFlag = true;
+		return instance;
+	}
+	else {
+		return instance;
+	}
+}
+
 Player::Player(float x, float y) {
 	//smellSence = Smell();
 	position.x = x;
@@ -106,6 +120,7 @@ void Player::Update() {
 	if (InputManager::GetInstance()->IsKeyDown(sf::Keyboard::E)) {
 		barksound.play();
 	}
+	Camera::GetInstance()->setViewPosition(sf::Vector2f(position.x, position.y));
 }
 
 void Player::Smell() {

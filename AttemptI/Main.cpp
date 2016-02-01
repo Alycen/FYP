@@ -22,6 +22,7 @@
 #include <math.h>
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "Camera.h"
 //#include "GameScene.h"
 //#include "SplashScene.h"
 
@@ -60,11 +61,12 @@ int main()
 		}
 		if (time == 0) {
 			sm.set("GAME");
+
 		}
 		time--;
 		//camera.setCenter(player->GetPosition());
 		
-		//window.setView(camera);
+		window.setView(Camera::GetInstance()->getView());
 
 		sm.Update();
 
