@@ -9,7 +9,7 @@ GameScene::GameScene() {
 	int map[MAP_W * MAP_H] = {
 		3,0,0,0,0,0,0,1,3,3,0,1,1,0,0,0,1,2,
 		3,0,1,0,3,0,0,3,3,3,0,0,1,0,0,1,1,2,
-		3,0,0,0,0,3,3,3,0,0,0,1,0,0,1,0,1,1,
+		3,0,0,0,0,3,3,3,0,0,0,1,0,0,1,0,1,2,
 		3,0,1,0,0,0,1,3,0,1,0,0,0,0,1,1,1,2,
 		3,0,1,0,0,0,3,0,1,1,0,0,1,3,3,1,1,0,
 		3,0,0,0,3,3,1,0,0,0,0,1,1,3,3,3,1,0,
@@ -22,16 +22,16 @@ GameScene::GameScene() {
 	for (y = 0; y < MAP_H; y++) {
 		for (x = 0; x < MAP_W; x++) {
 			if (map[count] == 0) {
-				tiles.push_back(new Tile("grass", 58 * x, 58 * y));
+				tiles.push_back(new Tile("grass", 60 * x, 60 * y));
 			}
 			else if (map[count] == 1) {
-				tiles.push_back(new Tile("soil", 58 * x, 58 * y));
+				tiles.push_back(new Tile("soil", 60 * x, 60 * y));
 			}
 			else if (map[count] == 2) {
-				tiles.push_back(new Tile("path", 58 * x, 58 * y));
+				tiles.push_back(new Tile("path", 60 * x, 60 * y));
 			}
 			else if (map[count] == 3) {
-				tiles.push_back(new Tile("water", 58 * x, 58 * y));
+				tiles.push_back(new Tile("water", 60 * x, 60 * y));
 			}
 			count++;
 		}

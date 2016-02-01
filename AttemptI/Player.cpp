@@ -9,7 +9,7 @@ Player::Player(float x, float y) {
 	position.x = x;
 	position.y = y;
 
-	texture.loadFromFile("Assets/Player.png");
+	texture.loadFromFile("Assets/Player1.png");
 	texture.setSmooth(true);
 
 	sprite.setTexture(texture);
@@ -18,7 +18,7 @@ Player::Player(float x, float y) {
 	sprite.setPosition(position);
 	sprite.setScale(xScale, yScale);
 
-	texture_Head.loadFromFile("Assets/head.png");
+	texture_Head.loadFromFile("Assets/head1.png");
 	texture_Head.setSmooth(true);
 
 	head.setTexture(texture_Head);
