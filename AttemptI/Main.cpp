@@ -26,9 +26,6 @@
 //#include "GameScene.h"
 //#include "SplashScene.h"
 
-// Need to add Box2D
-
-
 //TinyXML
 //PugiXML
 
@@ -41,10 +38,8 @@ int main()
 	//GameScene game = GameScene();
 	//SplashScene splash = SplashScene();
 
-	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 1");	
-	sf::View camera; 
-	camera.setSize(sf::Vector2f(1200, 800));
-	int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
+	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 3");	
+	//int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
 	int time = 15000;
 
 	while (window.isOpen())
@@ -66,7 +61,7 @@ int main()
 		time--;
 		//camera.setCenter(player->GetPosition());
 		
-		window.setView(Camera::GetInstance()->getView());
+		//window.setView(Camera::GetInstance()->getView());
 
 		sm.Update();
 
