@@ -6,7 +6,7 @@ NPC::NPC(float x, float y) {
 	position.x = x;
 	position.y = y;
 
-	texture.loadFromFile("Assets/npc.png");
+	texture.loadFromFile("Assets/npc1.png");
 	texture.setSmooth(true);
 
 	sprite.setTexture(texture);
@@ -15,7 +15,7 @@ NPC::NPC(float x, float y) {
 	sprite.setPosition(position);
 	sprite.setScale(xScale, yScale);
 
-	texture_Head.loadFromFile("Assets/headNpc.png");
+	texture_Head.loadFromFile("Assets/headNPC1.png");
 	texture_Head.setSmooth(true);
 
 	head.setTexture(texture_Head);
