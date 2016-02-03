@@ -29,11 +29,9 @@
 //TinyXML
 //PugiXML
 
-
 int main()
 {
 	srand(time(NULL));
-
 	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 3");	
 
 	int time = 20000;
@@ -50,17 +48,20 @@ int main()
 			if ((Event.type == sf::Event::KeyPressed) && (Event.key.code == sf::Keyboard::Escape))
 				window.close();
 		}
+
 		if (time == 0) {
 			SceneManager::GetInstance()->set("MAINMENU");
 		}
+		if (time == -20000) {
+			SceneManager::GetInstance()->set("GAME");
+		}
+
 		time--;
 		SceneManager::GetInstance()->Update();
-		//sm.Update();
 
 		InputManager::GetInstance()->UpdateState();
 		window.clear();
 		SceneManager::GetInstance()->Draw(window);
-		//sm.Draw(window);
 
 		window.display();
 	}

@@ -54,7 +54,7 @@ public:
 			{
 			case 0:
 				cout << "PLAY PRESSED" << endl;
-//				SceneManager::GetInstance()->set("GAME");
+				//SceneManager::GetInstance()->set("GAME");
 				break;
 			case 1:
 				cout << "SETTINGS PRESSED" << endl;
