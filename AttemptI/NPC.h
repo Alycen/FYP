@@ -6,6 +6,7 @@ using namespace std;
 #include "SFML/Graphics.hpp" 
 #include "SFML/OpenGL.hpp" 
 #include <iostream> 
+#include "Particle.h"
 
 #define DistanceToNeck 12.5
 

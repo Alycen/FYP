@@ -2,7 +2,6 @@
 #define _SMELL_
 
 #include "SFML\Graphics.hpp"
-#include "Emitter.h"
 #include <list>
 
 class Smell {
@@ -10,7 +9,6 @@ private:
 	sf::CircleShape bounds;
 	sf::Vector2f velocity;
 	sf::Vector2f position;
-	list<Emitter*> emitter;
 	float range;
 public:
 	Smell();
