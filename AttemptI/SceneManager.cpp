@@ -1,24 +1,32 @@
 #include "SceneManager.h"
 
-SceneManager sceneManagerInstance;
+bool SceneManager::instanceFlag = false;
+SceneManager* SceneManager::instance = NULL;
 
-SceneManager::SceneManager() {
-	currentScene = new SplashScene();
+SceneManager* SceneManager::GetInstance() {
+	if (!instanceFlag) {
+		instance = new SceneManager;
+		instanceFlag = true;
+		return instance;
+	}
+	else {
+		return instance;
+	}
 }
 
 void SceneManager::set(string scene) {
 	if (scene == "SPLASH") {
 		delete currentScene;
 		//currentScene->~BaseScene();
-		currentScene = new SplashScene();
+		currentScene = new SplashScene;
 	}
 	if (scene == "MAINMENU") {
 		delete currentScene;
-		currentScene = new MainMenuScene();
+		currentScene = new MainMenuScene;
 	}
 	if (scene == "GAME") {
 		delete currentScene;
-		currentScene = new GameScene();
+		currentScene = new GameScene;
 	}
 	//if (scene == "LOADING") {
 	//	currentScene = new LoadingScene();
@@ -36,8 +44,4 @@ void SceneManager::Update() {
 
 void SceneManager::Draw(sf::RenderWindow &win) {
 	currentScene->Draw(win);
-}
-
-SceneManager::~SceneManager() {
-	currentScene->~BaseScene();
 }

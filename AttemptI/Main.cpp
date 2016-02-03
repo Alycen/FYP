@@ -34,13 +34,9 @@ int main()
 {
 	srand(time(NULL));
 
-	static SceneManager sm = sceneManagerInstance;
-	//GameScene game = GameScene();
-	//SplashScene splash = SplashScene();
-
 	sf::RenderWindow window(sf::VideoMode(1400, 900, 32), "Project Mk 3");	
-	//int screenW = int(window.getSize().x), screenH = int(window.getSize().y);
-	int time = 15000;
+
+	int time = 20000;
 
 	while (window.isOpen())
 	{ 
@@ -55,19 +51,16 @@ int main()
 				window.close();
 		}
 		if (time == 0) {
-			sm.set("GAME");
-
+			SceneManager::GetInstance()->set("MAINMENU");
 		}
 		time--;
-		//camera.setCenter(player->GetPosition());
-		
-		//window.setView(Camera::GetInstance()->getView());
-
-		sm.Update();
+		SceneManager::GetInstance()->Update();
+		//sm.Update();
 
 		InputManager::GetInstance()->UpdateState();
 		window.clear();
-		sm.Draw(window);
+		SceneManager::GetInstance()->Draw(window);
+		//sm.Draw(window);
 
 		window.display();
 	}

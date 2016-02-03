@@ -16,8 +16,8 @@ public:
 	static Camera* GetInstance();
 	~Camera()
 	{
+		delete instance;
 		instanceFlag = false;
-
 	}
 	void Init(int w, int h);
 	void setCentre(sf::Vector2f pos);

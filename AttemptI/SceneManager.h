@@ -12,15 +12,19 @@ class SceneManager
 {
 private:
 	BaseScene* currentScene;
-public:
-	SceneManager();
-	~SceneManager();
-
-	static SceneManager &Instance() {
-		static SceneManager sm; 
-		return sm;
+	SceneManager() {
+		currentScene = new SplashScene();
 	}
+public:
+	~SceneManager() {
+		delete instance;
+		instanceFlag = false;
+	};
 
+	static SceneManager* GetInstance();
+
+	static bool instanceFlag;
+	static SceneManager* instance;
 	void set(string scene);
 	BaseScene get();
 
@@ -28,7 +32,5 @@ public:
 	void Update();
 	void Draw(sf::RenderWindow &win);
 };
-
-extern SceneManager sceneManagerInstance;
 
 #endif
