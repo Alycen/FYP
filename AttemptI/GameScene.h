@@ -19,6 +19,7 @@ private:
 
 	list<NPC*> npcs;
 	list<Tile*> tiles;
+	sf::Music bgSound;
 public:
 	GameScene();
 	
