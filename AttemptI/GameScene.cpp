@@ -6,8 +6,9 @@ GameScene::GameScene() {
 	if (!bgSound.openFromFile("Assets/Sounds/backGround.ogg"))
 		// handle error
 		int i = 0;
-	bgSound.setVolume(25);
+	bgSound.setVolume(10);
 	bgSound.play();
+	bgSound.setLoop(true);
 	player = new Player(900.0f, 200.0f);
 	npc_01 = new NPC(600.f, 500.0f);
 
