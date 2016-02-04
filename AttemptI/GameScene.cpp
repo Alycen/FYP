@@ -11,7 +11,7 @@ GameScene::GameScene() {
 	player = new Player(900.0f, 200.0f);
 	npc_01 = new NPC(600.f, 500.0f);
 
-	Camera::GetInstance()->Init(750, 500);
+	Camera::GetInstance()->Init(650, 500);
 	Camera::GetInstance()->setCentre(player->GetPosition());
 
 	long map[MAP_W * MAP_H] = {

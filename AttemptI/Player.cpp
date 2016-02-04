@@ -95,10 +95,10 @@ void Player::Update() {
 	}
 
 	if (run) {
-		speed = 0.15;
+		speed = 0.25;
 	}
 	else {
-		speed = 0.05;
+		speed = 0.115;
 	}
 
 	if (smell) {

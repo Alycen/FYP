@@ -25,7 +25,7 @@ private:
 	sf::Vector2f direction;
 	float xScale = 0.3f;
 	float yScale = 0.3f;
-	float speed = 0.03f;
+	float speed = 0.05f;
 
 public:
 	NPC();
